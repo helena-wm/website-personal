@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Halaman Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 200px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .menu.active {
+      left: 0;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 15px 0;
+      font-size: 24px;
+    }
+
+    .menu a:hover {
+      color: #ffd700;
+    }
+
+    main {
+	padding: 40px 20px;
+	backdrop-filter: blur(4px);
+	flex: 1;
+	text-align: center; /* ⬅️ Tambahkan ini */
+	}
+
+
+    .back-home {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-home a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-home a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .social-icons a.facebook {
+      background-color: #4267B2;
+    }
+
+    .social-icons a.instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+
+    .social-icons a.tiktok {
+      background: linear-gradient(135deg, #25F4EE, #000000, #FE2C55);
+    }
+
+    .social-icons a.whatsapp {
+      background: linear-gradient(to right, #25D366, #128C7E);
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(0, 0, 0, 0.7);
+    }
+
+    /* TABEL YUK KENALAN */
+    table {
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: left;
+    }
+
+    th {
+      background-color: rgba(0, 0, 0, 0.3);
+      font-size: 20px;
+    }
+
+    td {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu Toggle -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Navigasi Menu -->
+  <nav class="menu" id="hiddenMenu">
+    <a href="index.html" title="Beranda"><i class="fas fa-home icon"></i></a>
+    <a href="Personal data.html" title="Tentang"><i class="fas fa-user icon"></i></a>
+    <a href="Documentasi.html" title="Foto"><i class="fas fa-camera icon"></i></a>
+    <a href="Notes.html" title="Blog"><i class="fas fa-blog icon"></i></a>
+    <a href="Contact.html" title="Kontak"><i class="fas fa-envelope icon"></i></a>
+  </nav>
+
+  <header>
+    <h2>Selamat Datang di Website inspiratif</h2>
+  </header>
+
+  <main>
+    <h2>Halo, Orang-orang Hebat!</h2>
+    <p>Setiap langkah yang kamu ambil membawa kamu lebih dekat kepada impianmu.</p>
+    <p><strong>"Jangan pernah ragu untuk mengejar mimpimu. Keberhasilan datang kepada mereka yang berani bermimpi dan berusaha keras untuk mewujudkannya!"</strong></p>
+
+    <div class="back-home">
+      <a href="Personal data.html"><i class="fas fa-user icon"></i> Yuk Kenalan 💖</a>
+    </div>
+  </main>
+
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank" class="facebook" title="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com" target="_blank" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com" target="_blank" class="tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://wa.me" target="_blank" class="whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('hiddenMenu').classList.toggle('active');
+    }
+
+    window.addEventListener("load", () => {
+      setTimeout(() => alert("Selamat datang di Halaman Website Helena Wm! Silahkan pilih oke untuk berkunjung 💖"), 500);
+    });
+  </script>
+
+</body>
+</html>

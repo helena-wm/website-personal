@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog Helena Waoma</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: #3e1f28;
+      color: #e9d8c4;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #5b2a37;
+      color: #f0e2c6;
+      text-align: center;
+      padding: 70px 20px 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 5px solid #d4af7f;
+      box-shadow: 0 5px 15px rgba(212, 175, 127, 0.4);
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 3em;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 4px #a67c00;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 25px;
+    }
+
+    article {
+      background: #5b2a37;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(91, 42, 55, 0.7);
+      padding: 30px 30px 40px;
+      margin-bottom: 50px;
+      border-left: 8px solid #d4af7f;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    article.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    article h2 {
+      color: #d4af7f;
+      font-weight: 700;
+      font-size: 2em;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+      text-shadow: 1px 1px 3px #6b3a2c;
+    }
+
+    article p {
+      margin-bottom: 18px;
+      color: #f0e2c6;
+    }
+
+    article em {
+      display: flex;
+      align-items: center;
+      color: #d4af7f;
+      font-style: normal;
+      margin-bottom: 18px;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+
+    article em i.fa-clock {
+      margin-right: 8px;
+      font-size: 1.1em;
+      color: #f0e2c6;
+      text-shadow: 0 0 4px #d4af7f;
+    }
+
+    .back-link {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .back-link a {
+      color: #d4af7f;
+      font-weight: 700;
+      font-size: 1.2em;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    .back-link a:hover {
+      border-color: #f0e2c6;
+      color: #f0e2c6;
+    }
+
+    footer {
+      background-color: #5b2a37;
+      color: #d4af7f;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+      box-shadow: 0 -5px 15px rgba(91, 42, 55, 0.7);
+    }
+
+    #toTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      font-size: 20px;
+      border: none;
+      background-color: #d4af7f;
+      color: #5b2a37;
+      padding: 14px 16px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(212, 175, 127, 0.6);
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #toTopBtn:hover {
+      background-color: #f0e2c6;
+      color: #5b2a37;
+    }
+
+    #musicToggle {
+      position: fixed;
+      bottom: 90px;
+      right: 28px;
+      z-index: 1000;
+      background-color: #d4af7f;
+      color: #5b2a37;
+      border: none;
+      border-radius: 50%;
+      padding: 14px 16px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(212, 175, 127, 0.6);
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.5em; }
+      article { padding: 25px 20px 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="profil.jpg" alt="Helena" />
+    <h1>Notes dan Inspiratif</h1>
+  </header>
+
+  <!-- Musik -->
+  <audio id="bgMusic" loop>
+    <source src="intro.mp3" type="audio/mpeg" />
+    Browser Anda tidak mendukung elemen audio.
+  </audio>
+
+  <!-- Tombol Play/Pause Musik -->
+  <button id="musicToggle" title="Putar Musik">🔊</button>
+
+  <div class="container blog-container">
+    <article>
+      <h2>Siapa aku?</h2>
+      <p>Halo! Namaku <strong>Helena</strong>, seorang mahasiswi yang sedang menapaki perjalanan belajar dan kehidupan di <em>Universitas Nias Raya.</em></p>
+      <p>Aku suka menulis, mencatat cerita-cerita kecil yang aku temui setiap hari —tentang diriku, tentang teman-teman, dan tentang proses tumbuh yang tidak selalu mudah.</p>
+      <p>Terima kasih sudah mampir. Semoga ada satu dua kalimat di sini yang bisa menyemangati harimu.</p>
+    </article>
+
+    <article>
+      <h2>Tetap Semangat Walau Lelah</h2>
+      <p><em><i class="fas fa-clock"></i> Ditulis oleh: Helena Waoma | 28 Juni 2025</em></p>
+      <p>Hari-hari berat pasti akan datang, dan kadang rasanya ingin menyerah. Tapi justru saat kita ingin berhenti, di situlah kita sedang diuji: seberapa kuat hati ini bertahan?</p>
+      <p>Lelah itu wajar. Tapi jangan biarkan lelah menghentikan langkahmu.</p>
+    </article>
+
+    <article>
+      <h2>Jangan Takut Memulai dari Nol</h2>
+      <p><em><i class="fas fa-clock"></i> Ditulis oleh: Helena Waoma | 28 Juni 2025</em></p>
+      <p>Sering kali kita merasa ragu untuk memulai sesuatu yang baru karena takut gagal. Padahal semua hal besar juga pernah dimulai dari langkah kecil yang ragu-ragu.</p>
+    </article>
+
+    <article>
+      <h2>Berani Percaya Diri, Meski Tak Sempurna</h2>
+      <p><em><i class="fas fa-clock"></i> Ditulis oleh: Helena Waoma | 28 Juni 2025</em></p>
+      <p>Percaya diri tidak datang dari kesempurnaan, tapi dari penerimaan diri. Mulailah dari hal kecil: menyapa, menyampaikan pendapat, dan tetap melangkah.</p>
+    </article>
+
+    <div class="back-link">
+      <a href="Contact.html" title="Kontak"><i class="fas fa-envelope"></i> Lihat Kontak</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Helena Waoma. Semua hak cipta dilindungi.
+  </footer>
+
+  <!-- Tombol scroll ke atas -->
+  <button id="toTopBtn" title="Ke atas"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+    const toggleBtn = document.getElementById('musicToggle');
+    const toTopBtn = document.getElementById('toTopBtn');
+
+    music.volume = 0.3;
+    let isPlaying = false;
+
+    toggleBtn.addEventListener('click', () => {
+      if (!isPlaying) {
+        music.play().then(() => {
+          isPlaying = true;
+          toggleBtn.textContent = '🔇';
+          toggleBtn.title = "Matikan Musik";
+        }).catch(err => {
+          alert('Autoplay diblokir. Klik dulu di mana saja lalu tekan tombol musik.');
+        });
+      } else {
+        music.pause();
+        isPlaying = false;
+        toggleBtn.textContent = '🔊';
+        toggleBtn.title = "Putar Musik";
+      }
+    });
+
+    function playMusicOnce() {
+      music.play().catch(err => console.log('Autoplay gagal:', err));
+      window.removeEventListener('scroll', playMusicOnce);
+      window.removeEventListener('click', playMusicOnce);
+    }
+    window.addEventListener('scroll', playMusicOnce);
+    window.addEventListener('click', playMusicOnce);
+
+    window.addEventListener('scroll', () => {
+      toTopBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
+      document.querySelectorAll('article').forEach(article => {
+        if (article.getBoundingClientRect().top < window.innerHeight - 100) {
+          article.classList.add('show');
+        }
+      });
+    });
+
+    toTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>

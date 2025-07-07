@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeri Helena</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #3b0a20, #75203f); /* maroon gelap */
+      padding: 30px;
+      text-align: center;
+      color: #f2e9e9;
+    }
+
+    h1 {
+      color: #f8dede;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery-item {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 10px;
+      width: 200px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #b67284;
+      margin-bottom: 8px;
+    }
+
+    .caption {
+      font-size: 14px;
+      color: #f8dede;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #bf1650;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    a:hover {
+      background: #95103a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DOKUMENTASI DI KAMPUS 📸</h1>
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="kampus.jpg" alt="Kampus">
+      
+    </div>
+    <div class="gallery-item">
+      <img src="ngoding.jpg" alt="Ngoding">
+      
+    </div>
+    <div class="gallery-item">
+      <img src="kampus22.jpg" alt="Teman-teman">
+      
+    </div>
+    <div class="gallery-item">
+      <img src="kampus2.jpg" alt="Jalan-jalan">
+      
+    </div>
+  </div>
+
+  <a href="Notes.html" title="Blog"><i class="fas fa-blog icon"></i> Lihat Notes saya</a>
+
+</body>
+</html>
