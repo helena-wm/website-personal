@@ -143,22 +143,7 @@
 
     #toTopBtn:hover {
       background-color: #f0e2c6;
-      color: #5b2a37;
-    }
-
-    #musicToggle {
-      position: fixed;
-      bottom: 90px;
-      right: 28px;
-      z-index: 1000;
-      background-color: #d4af7f;
-      color: #5b2a37;
-      border: none;
-      border-radius: 50%;
-      padding: 14px 16px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(212, 175, 127, 0.6);
+      color: #5b2a2a;
     }
 
     @media (max-width: 600px) {
@@ -174,14 +159,11 @@
     <h1>Notes dan Inspiratif</h1>
   </header>
 
-  <!-- Musik -->
+  <!-- Musik (otomatis saat klik atau scroll) -->
   <audio id="bgMusic" loop>
-    <source src="intro.mp3" type="audio/mpeg" />
+    <source src="musi/intro.mp3" type="audio/mpeg" />
     Browser Anda tidak mendukung elemen audio.
   </audio>
-
-  <!-- Tombol Play/Pause Musik -->
-  <button id="musicToggle" title="Putar Musik">🔊</button>
 
   <div class="container blog-container">
     <article>
@@ -216,7 +198,7 @@
   </div>
 
   <footer>
-    &copy; 2025 Helena Waoma. Semua hak cipta dilindungi.
+    &copy; 2025 Helena Wm. Semua hak cipta dilindungi.
   </footer>
 
   <!-- Tombol scroll ke atas -->
@@ -224,34 +206,16 @@
 
   <script>
     const music = document.getElementById('bgMusic');
-    const toggleBtn = document.getElementById('musicToggle');
     const toTopBtn = document.getElementById('toTopBtn');
 
     music.volume = 0.3;
-    let isPlaying = false;
-
-    toggleBtn.addEventListener('click', () => {
-      if (!isPlaying) {
-        music.play().then(() => {
-          isPlaying = true;
-          toggleBtn.textContent = '🔇';
-          toggleBtn.title = "Matikan Musik";
-        }).catch(err => {
-          alert('Autoplay diblokir. Klik dulu di mana saja lalu tekan tombol musik.');
-        });
-      } else {
-        music.pause();
-        isPlaying = false;
-        toggleBtn.textContent = '🔊';
-        toggleBtn.title = "Putar Musik";
-      }
-    });
 
     function playMusicOnce() {
       music.play().catch(err => console.log('Autoplay gagal:', err));
       window.removeEventListener('scroll', playMusicOnce);
       window.removeEventListener('click', playMusicOnce);
     }
+
     window.addEventListener('scroll', playMusicOnce);
     window.addEventListener('click', playMusicOnce);
 
