@@ -2,13 +2,13 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Penting untuk mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galeri Helena</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, #3b0a20, #75203f);
-      padding: 30px 15px;
+      padding: 20px 10px;
       text-align: center;
       color: #f2e9e9;
       margin: 0;
@@ -16,24 +16,24 @@
 
     h1 {
       color: #f8dede;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-      font-size: 24px;
+      font-size: 22px;
     }
 
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
     }
 
     .gallery-item {
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
       padding: 10px;
-      width: 200px;
-      max-width: 100%;
+      width: 100%;
+      max-width: 280px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
     }
@@ -45,7 +45,7 @@
     .gallery img {
       width: 100%;
       height: auto;
-      max-height: 160px;
+      max-height: 180px;
       object-fit: cover;
       border-radius: 10px;
       border: 3px solid #b67284;
@@ -59,7 +59,7 @@
 
     a {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 25px;
       padding: 10px 20px;
       background: #bf1650;
       color: white;
@@ -73,24 +73,14 @@
     a:hover {
       background: #95103a;
     }
-
-    /* Responsif untuk layar kecil */
-    @media (max-width: 500px) {
-      .gallery-item {
-        width: 100%;
-      }
-
-      h1 {
-        font-size: 20px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <h1>DOKUMENTASI DI KAMPUS 📸</h1>
 
-  <div class="gallery"><div class="gallery-item">
+  <div class="gallery">
+    <div class="gallery-item">
       <img src="kampus.jpg" alt="Kampus">
     </div>
     <div class="gallery-item">
