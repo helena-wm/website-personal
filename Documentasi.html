@@ -2,20 +2,23 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Penting untuk mobile -->
   <title>Galeri Helena</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #3b0a20, #75203f); /* maroon gelap */
-      padding: 30px;
+      background: linear-gradient(to bottom right, #3b0a20, #75203f);
+      padding: 30px 15px;
       text-align: center;
       color: #f2e9e9;
+      margin: 0;
     }
 
     h1 {
       color: #f8dede;
       margin-bottom: 30px;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      font-size: 24px;
     }
 
     .gallery {
@@ -30,6 +33,7 @@
       border-radius: 12px;
       padding: 10px;
       width: 200px;
+      max-width: 100%;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
     }
@@ -40,7 +44,8 @@
 
     .gallery img {
       width: 100%;
-      height: 160px;
+      height: auto;
+      max-height: 160px;
       object-fit: cover;
       border-radius: 10px;
       border: 3px solid #b67284;
@@ -68,32 +73,38 @@
     a:hover {
       background: #95103a;
     }
+
+    /* Responsif untuk layar kecil */
+    @media (max-width: 500px) {
+      .gallery-item {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <h1>DOKUMENTASI DI KAMPUS 📸</h1>
 
-  <div class="gallery">
-    <div class="gallery-item">
+  <div class="gallery">div class="gallery-item">
       <img src="kampus.jpg" alt="Kampus">
-      
     </div>
     <div class="gallery-item">
       <img src="ngoding.jpg" alt="Ngoding">
-      
     </div>
     <div class="gallery-item">
       <img src="kampus22.jpg" alt="Teman-teman">
-      
     </div>
     <div class="gallery-item">
       <img src="kampus2.jpg" alt="Jalan-jalan">
-      
     </div>
   </div>
 
-  <a href="Notes.html" title="Blog"><i class="fas fa-blog icon"></i> Lihat Notes saya</a>
+  <a href="Notes.html" title="Blog">📔 Lihat Notes saya</a>
 
 </body>
 </html>
